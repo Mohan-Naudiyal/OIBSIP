@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>Temperature Converter</title>
+</head>
+<body>
+    <script>
+
+  let x = 0;
+  let result;
+  function inputChange(){
+     x = document.getElementById("input").value
+    
+  }
+
+
+   function handleClick() {
+    let temp = document.getElementById("sort").value
+    console.log(temp)
+
+    if (x == ""){
+    window.alert("Please enter Temperature")
+    result = ""
+    }
+
+    else if( temp == 'f'){   
+   console.log((x-32)*5/9)
+   result = (x-32)*5/9
+    }
+    else  {
+    console.log(x*(9/5)+32)
+    result = x*(9/5)+32
+  
+    }
+    document.getElementById("result").innerHTML = result
+}
+
+    </script>
+    <style>
+      body{
+        
+         background-image: url(https://media.istockphoto.com/id/819556270/photo/thermometer-on-a-green-nature-background-and-temperature-measuring-environment-concept.jpg?s=612x612&w=0&k=20&c=cZ1I7hgWWTswzNoAOeIek6AYmD3I62FvMJlqCHtlCmE=) ;
+         background-repeat: no-repeat;
+         width: 100%;
+         background-size: cover;
+      }
+     </style>
+    
+     <div class="text-center">
+    <h1 class="mt-xl-5">Temperature Converter</h1>
+    <br>
+    <div>
+  <input id="input" onchange="inputChange()" type='number' placeholder='Enter the Temp.' ></input>
+  <select id="sort" value="sort" >
+    <option id='c' >Celsius To Fahrenhiet</option>
+    <option id='f' value="f" >Fahrenhiet To Celsius</option>
+  </select>
+  </div>
+  <br>
+  <h3 id="result" ></h3>
+  <br>
+  <div ><button type="button" class="btn btn-dark" onclick="handleClick()">Convert</button></div>
+   </div>
+  
+  
+    
+</body>
+</html>
